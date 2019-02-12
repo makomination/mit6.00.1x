@@ -1,0 +1,12 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Oct 18 05:43:41 2018
+
+@author: makoto
+"""
+
+n = input('You are in the lost forest. Go left or right?')
+while n != 'left':
+    n = input('You are in the lost forest. Go left or right?')
+print('You got out of the lost forest!')

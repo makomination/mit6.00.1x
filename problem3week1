@@ -1,0 +1,27 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Oct 21 11:40:52 2018
+
+@author: makoto
+"""
+
+s = 'abcdezfghiyzz'
+
+testStr = ''
+res = ''
+for c in s:
+    if len(testStr) == 0:
+        testStr = c
+        res = c
+    elif len(testStr) > 0:
+        if testStr[-1] <= c:
+            testStr += c
+            if c == s[-1]:
+                if  len(testStr) > len(res):
+                    res = testStr
+        else:
+            if len(testStr) > len(res):
+                res = testStr
+            testStr = c
+print('Longest substring in alphabetical order is:', res)

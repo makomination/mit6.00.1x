@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Nov  6 07:31:47 2018
+
+@author: makoto
+"""
+print('Please thing of a secret number between 0 and 100!')
+low = 0
+high = 100
+guess = (low + high)//2
+print('Is your secret number ' + str(guess) + '?', end='')
+ans = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+while ans != 'c':
+    while ans != 'h' and ans != 'l' and ans != 'c':
+        print('Sorry, I did not understand your input.')
+        print('Is your secret number ' + str(guess) + '?', end='')
+        ans = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+
+    if ans != 'c':
+        if ans == 'l':
+            low = guess
+        elif ans == 'h':
+            high = guess
+        temp = guess
+        guess = (low + high)//2
+        if (temp == guess and guess < 100):
+            guess += 1
+        print('Is your secret number ' + str(guess) + '?', end='')
+        ans = input("Enter 'h' to indicate the guess is too high. Enter 'l' to indicate the guess is too low. Enter 'c' to indicate I guessed correctly.")
+print('Game over. Your secret number was:', guess)
